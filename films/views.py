@@ -10,7 +10,7 @@ def film_list(request):
 
 def add_movie(request):
     if request.method == 'POST':
-        form = FilmForm(request.POST)
+        form = FilmForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('film_list')  
