@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Films</title>
 </head>
+
 <body>
     <a href="{% url 'film_list' %}">
-    <button>Voir la liste</button>
-</a>
+        <button>Voir la liste</button>
+    </a>
     <h1>Ajouter un film</h1>
 
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter</button>
+    </form>
 </body>
+
 </html>
