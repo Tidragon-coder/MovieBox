@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Films</title>
+</head>
+<body>
+    <a href="{% url 'addMovie' %}">
+    <button>Ajouter un film</button>
+</a>
+    <h1>Liste des films</h1>
+    <ul>
+        {% for film in films %}
+            <li>
+                <strong>{{ film.titre }}</strong> ({{ film.annee }}) - {{ film.genre }}<br>
+            </li>
+        {% empty %}
+            <li>Aucun film trouvé.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
