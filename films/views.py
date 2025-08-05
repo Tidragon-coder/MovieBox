@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Film
+from django.db.models import Avg
 
 from .forms import FilmForm
 
 def film_list(request):
     films = Film.objects.all()
-    return render(request, 'films/film_list.html', {'films': films})
+    note_moy = round(films.aggregate(moyenne=Avg('note'))['moyenne'], 1)
+    return render(request, 'films/film_list.html', {'films': films, 'note_moy': note_moy})
 
 def add_movie(request):
     if request.method == 'POST':
