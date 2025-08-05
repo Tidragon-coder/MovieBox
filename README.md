@@ -24,46 +24,12 @@ L'utilisateur peut ajouter, modifier et consulter des films, avec des notes, com
 
 ---
 
-## 📁 Structure du projet
-
-moviebox/
-│
-├── films/
-│ ├── migrations/
-│ ├── templates/
-│ │ └── films/
-│ │ ├── film_list.html
-│ │ ├── film_add.html
-│ │ └── film_update.html
-│ ├── static/
-│ │ └── films/
-│ │ ├── style.css
-│ │ ├── film_add.css
-│ │ └── film_update.css
-│ ├── admin.py
-│ ├── apps.py
-│ ├── forms.py
-│ ├── models.py
-│ ├── urls.py
-│ └── views.py
-│
-├── moviebox/
-│ ├── settings.py
-│ ├── urls.py
-│ └── wsgi.py
-│
-├── db.sqlite3
-├── manage.py
-└── README.md
-
----
-
 ## ⚙️ Installation
 
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/ton-pseudo/moviebox.git
+git clone https://github.com/Tidragon-coder/MovieBox.git
 cd moviebox
 2. Créer et activer un environnement virtuel
 python -m venv venv

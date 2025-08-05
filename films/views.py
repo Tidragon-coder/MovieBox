@@ -5,11 +5,13 @@ from django.db.models import Avg
 
 from .forms import FilmForm
 
+# afficher la list de films (et la moyenne des notes)
 def film_list(request):
     films = Film.objects.all().order_by('-id')
     note_moy = round(films.aggregate(moyenne=Avg('note'))['moyenne'], 1)
     return render(request, 'films/film_list.html', {'films': films, 'note_moy': note_moy})
 
+# Ajouter un film
 def add_movie(request):
     if request.method == 'POST':
         form = FilmForm(request.POST, request.FILES)
@@ -21,6 +23,7 @@ def add_movie(request):
     
     return render(request, 'films/film_add.html', {'form': form})
 
+# Modifier un film
 def update_movie(request, pk):
     film = Film.objects.get(pk=pk)
     if request.method == 'POST':
@@ -33,4 +36,3 @@ def update_movie(request, pk):
     
     return render(request, 'films/film_update.html', {'form': form, 'film': film})
 
-# Create your views here.
