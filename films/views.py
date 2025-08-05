@@ -6,7 +6,7 @@ from django.db.models import Avg
 from .forms import FilmForm
 
 def film_list(request):
-    films = Film.objects.all()
+    films = Film.objects.all().order_by('-id')
     note_moy = round(films.aggregate(moyenne=Avg('note'))['moyenne'], 1)
     return render(request, 'films/film_list.html', {'films': films, 'note_moy': note_moy})
 
