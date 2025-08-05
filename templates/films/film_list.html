@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MovieBox</title>
+    <link rel="stylesheet" href="{% static 'films/film_list.css' %}">
+</head>
+
+<body>
+    <a href="{% url 'addMovie' %}" class="btn">Ajouter un film</a>
+<p>Moyenne des notes : {{ note_moy }} / 5</p>
+<h1>Liste des films</h1>
+<div class="card_film">
+    <ul>
+        {% for film in films %}
+            <li class="film-card">
+                <div class="film-title">{{ film.titre }} ({{ film.annee }})</div>
+                <div class="film-details">{{ film.genre }}</div>
+
+                {% if film.image %}
+                    <img src="{{ film.image.url }}" alt="Cover de {{ film.titre }}" class="film-image">
+                {% else %}
+                    <p>Aucune image disponible.</p>
+                {% endif %}
+
+                {% if film.note %}
+                    <p class="film-note">Note : {{ film.note }} / 5</p>
+                {% else %}
+                    <p class="film-note">Pas de notes enregistrée</p>
+                {% endif %}
+
+                <p class="film-commentaire">Commentaire : {{ film.commentaire }}</p>
+
+                <a href="{% url 'update_movie' film.pk %}" class="btn btn-update">Modifier</a>
+            </li>
+        {% empty %}
+            <li>Aucun film trouvé.</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+/* Par manque de temps style simple généré par IA */
+
+/* Global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: #f0f4f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+/* Bouton principal */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Conteneur liste films */
+.card_film {
+    margin-top: 20px;
+}
+
+/* Liste sans puce */
+.card_film ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Chaque film en "carte" */
+.film-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Titre du film */
+.film-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+/* Détails du film */
+.film-details {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+}
+
+/* Image cover */
+.film-image {
+    width: 200px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin-bottom: 12px;
+}
+
+/* Note */
+.film-note {
+    font-weight: 600;
+    color: #27ae60;
+}
+
+/* Commentaire */
+.film-commentaire {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Bouton modifier */
+.btn-update {
+    background-color: #e67e22;
+    margin-top: 12px;
+}
+
+.btn-update:hover {
+    background-color: #d35400;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.btn:hover {
+    background-color: #2980b9;
+}

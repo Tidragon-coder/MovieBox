@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MovieBox - Modifier un film</title>
+    <link rel="stylesheet" href="{% static 'films/film_update.css' %}">
+</head>
+
+<body>
+    
+    
+    <h2>Modifier le film : {{ film.titre }}</h2>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+    <a href="{% url 'film_list' %}" class="btn">← Retour à la liste</a>
+</body>
+
+</html>
