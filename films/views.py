@@ -19,4 +19,16 @@ def add_movie(request):
     
     return render(request, 'films/film_add.html', {'form': form})
 
+def update_movie(request, pk):
+    film = Film.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = FilmForm(request.POST, request.FILES, instance=film)
+        if form.is_valid():
+            form.save()
+            return redirect('film_list')
+    else:
+        form = FilmForm(instance=film)
+    
+    return render(request, 'films/film_update.html', {'form': form, 'film': film})
+
 # Create your views here.

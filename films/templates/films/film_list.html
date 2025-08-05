@@ -13,12 +13,24 @@
     <ul>
         {% for film in films %}
         <li>
+            <a href="{% url 'update_movie' film.pk %}">
+                <button>Modifier</button>
+            </a><br>
             <strong>{{ film.titre }}</strong> ({{ film.annee }}) - {{ film.genre }}<br>
             {% if film.image %}
             <img src="{{ film.image.url }}" alt="Cover de {{ film.titre }}" style="width: 200px;">
             {% else %}
             <p>Aucune image disponible.</p>
             {% endif %}
+
+            {% if film.note %}
+            <p>Note : {{ film.note }} / 5</p>
+            {% else %}
+            <p>Pas de notes enregistrée</p>
+            {% endif %}
+
+            <p>Comentaire : {{ film.commentaire }}</p>
+
         </li>
         {% empty %}
         <li>Aucun film trouvé.</li>
