@@ -8,7 +8,8 @@ from .forms import FilmForm
 # afficher la list de films (et la moyenne des notes)
 def film_list(request):
     films = Film.objects.all().order_by('-id')
-    note_moy = round(films.aggregate(moyenne=Avg('note'))['moyenne'], 1)
+    moyenne = films.aggregate(moyenne=Avg('note'))['moyenne']
+    note_moy = round(moyenne, 1) if moyenne is not None else 0
     return render(request, 'films/film_list.html', {'films': films, 'note_moy': note_moy})
 
 # Ajouter un film
@@ -35,4 +36,6 @@ def update_movie(request, pk):
         form = FilmForm(instance=film)
     
     return render(request, 'films/film_update.html', {'form': form, 'film': film})
+
+
 
